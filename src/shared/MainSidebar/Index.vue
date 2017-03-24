@@ -3,7 +3,7 @@
         <section class="sidebar">
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="../assets/user.jpg"
+                    <img src="../../assets/user.jpg"
                          class="img-circle"
                          alt="用户图片">
                 </div>

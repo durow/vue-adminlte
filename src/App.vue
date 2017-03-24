@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import MainHeader from './shared/MainHeader.vue'
-import MainSidebar from './shared/MainSidebar.vue'
-import ControlSidebar from './shared/ControlSidebar.vue'
-import MainFooter from './shared/MainFooter.vue'
+import MainHeader from './shared/MainHeader'
+import MainSidebar from './shared/MainSidebar'
+import ControlSidebar from './shared/ControlSidebar'
+import MainFooter from './shared/MainFooter'
 
 export default {
   name: 'app',
