@@ -7,11 +7,11 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <!-- 消息下拉面板 -->
-                    <MessagePanel></MessagePanel>
+                    <MessageMenu></MessageMenu>
                     <!-- 通知下拉面板 -->
-                    <NotificationPanel></NotificationPanel>
+                    <NotificationMenu></NotificationMenu>
                     <!-- 用户帐号下拉面板 -->
-                    <UserPanel></UserPanel>
+                    <UserMenu></UserMenu>
                     <!-- 开关ControlSidebar的按钮 -->
                     <li>
                         <a href="#"
@@ -26,18 +26,18 @@
 <script>
 import Logo from './Logo.vue'
 import ToggleButton from './ToggleButton.vue'
-import UserPanel from './UserPanel.vue'
-import MessagePanel from './MessagePanel.vue'
-import NotificationPanel from './NotificationPanel.vue'
+import UserMenu from './UserMenu.vue'
+import MessageMenu from './MessageMenu.vue'
+import NotificationMenu from './NotificationMenu.vue'
 
 export default {
     name: 'main-header',
     components:{
         Logo,
         ToggleButton,
-        UserPanel,
-        MessagePanel,
-        NotificationPanel
+        UserMenu,
+        MessageMenu,
+        NotificationMenu
     }
 }
 </script>

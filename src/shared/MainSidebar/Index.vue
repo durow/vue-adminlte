@@ -1,57 +1,27 @@
 <template>
     <aside class="main-sidebar">
         <section class="sidebar">
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="../../assets/user.jpg"
-                         class="img-circle"
-                         alt="用户图片">
-                </div>
-                <div class="pull-left info">
-                    <p>用户名</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
-                </div>
-            </div>
-            <form action="#"
-                  method="get"
-                  class="sidebar-form">
-                <div class="input-group">
-                    <input type="text"
-                           name="q"
-                           class="form-control"
-                           placeholder="Search...">
-                    <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                            </button>
-                          </span>
-                </div>
-            </form>
-            <!-- /.search form -->
-            <ul class="sidebar-menu">
-                <li class="header">HEADER</li>
-                <li><a href="#"><i class="fa fa-link"></i><span>页面一</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i><span>我的博客</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i><span>关于我</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i><span>关于博客</span></a></li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-link"></i>
-                        <span>友情链接</span>
-                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">博客园</a></li>
-                        <li><a href="#">GitHub</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <!-- 用户面板 -->
+            <UserPanel></UserPanel>
+            <!-- 搜索面板 -->
+            <SearchPanel></SearchPanel>
+            <!-- 菜单面板 -->
+            <SidebarMenu></SidebarMenu>
         </section>
     </aside>
 </template>
 
 <script>
+import UserPanel from './UserPanel.vue'
+import SearchPanel from './SearchPanel.vue'
+import SidebarMenu from './SidebarMenu.vue'
+
 export default {
-    name: 'main-sidebar'
+    name: 'main-sidebar',
+    components:{
+        UserPanel,
+        SearchPanel,
+        SidebarMenu
+    }
 }
 </script>
