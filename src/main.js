@@ -5,13 +5,14 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
-
+// import bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
-
+// import font-awesome
 import 'font-awesome/css/font-awesome.min.css'
+// import ionicons
 import 'ionicons/dist/css/ionicons.min.css'
-
+//import admin-lte
 import 'admin-lte/dist/css/AdminLTE.min.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'admin-lte/dist/js/app.min.js'

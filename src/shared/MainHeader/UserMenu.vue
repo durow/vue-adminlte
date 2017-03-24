@@ -9,7 +9,7 @@
                  class="user-image"
                  alt="User Image">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs">用户名</span>
+            <span class="hidden-xs">durow</span>
         </a>
         <ul class="dropdown-menu">
             <!-- The user image in the menu -->

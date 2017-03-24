@@ -10,6 +10,8 @@
                     <MessageMenu></MessageMenu>
                     <!-- 通知下拉面板 -->
                     <NotificationMenu></NotificationMenu>
+                    <!-- 任务下拉面板 -->
+                    <TasksMenu></TasksMenu>
                     <!-- 用户帐号下拉面板 -->
                     <UserMenu></UserMenu>
                     <!-- 开关ControlSidebar的按钮 -->
@@ -29,6 +31,7 @@ import ToggleButton from './ToggleButton.vue'
 import UserMenu from './UserMenu.vue'
 import MessageMenu from './MessageMenu.vue'
 import NotificationMenu from './NotificationMenu.vue'
+import TasksMenu from './TasksMenu.vue'
 
 export default {
     name: 'main-header',
@@ -37,7 +40,8 @@ export default {
         ToggleButton,
         UserMenu,
         MessageMenu,
-        NotificationMenu
+        NotificationMenu,
+        TasksMenu
     }
 }
 </script>
