@@ -1,11 +1,13 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper"
+       v-bind:class="[theme]">
     <MainHeader></MainHeader>
     <MainSidebar></MainSidebar>
     <ControlSidebar></ControlSidebar>
     <div class="control-sidebar-bg"></div>
     <MainContent></MainContent>
     <MainFooter></MainFooter>
+  
   </div>
 </template>
 
@@ -24,6 +26,16 @@ export default {
     ControlSidebar,
     MainFooter,
     MainContent
+  },
+  data: function () {
+    return {
+      theme: 'skin-blue'
+    }
+  },
+  methods: {
+    skinYellow: function () {
+      this.theme = 'skin-yellow'
+    }
   }
 }
 </script>

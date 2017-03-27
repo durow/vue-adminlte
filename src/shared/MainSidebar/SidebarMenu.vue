@@ -8,7 +8,7 @@
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-cog"></i>功能项1-1</a></li>
+                <li><a href="#" v-on:click="functionOne"><i class="fa fa-cog"></i>功能项1-1</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>功能项1-2</a></li>
                 <li><a href="#"><i class="fa fa-cubes"></i>功能项1-3</a></li>
                 <li><a href="#"><i class="fa fa-bookmark-o"></i>功能项1-4</a></li>
@@ -53,3 +53,14 @@
         </li>
     </ul>
 </template>
+
+<script>
+export default {
+    methods:{
+        functionOne:function(){
+            console.debug('function one clicked')
+            vm.theme = 'skin-yellow'
+        }
+    }
+}
+</script>
