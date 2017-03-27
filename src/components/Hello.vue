@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>这是主页面</h1>
+  <div>
+    这是主页面
   </div>
 </template>
 

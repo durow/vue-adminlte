@@ -4,11 +4,7 @@
     <MainSidebar></MainSidebar>
     <ControlSidebar></ControlSidebar>
     <div class="control-sidebar-bg"></div>
-    <div class="content-wrapper">
-      <section class="content">
-        <router-view></router-view>
-      </section>
-    </div>
+    <MainContent></MainContent>
     <MainFooter></MainFooter>
   </div>
 </template>
@@ -18,6 +14,7 @@ import MainHeader from './shared/MainHeader'
 import MainSidebar from './shared/MainSidebar'
 import ControlSidebar from './shared/ControlSidebar'
 import MainFooter from './shared/MainFooter'
+import MainContent from './shared/MainContent'
 
 export default {
   name: 'app',
@@ -25,7 +22,8 @@ export default {
     MainHeader,
     MainSidebar,
     ControlSidebar,
-    MainFooter
+    MainFooter,
+    MainContent
   }
 }
 </script>
