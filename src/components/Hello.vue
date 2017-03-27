@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import Bus from '../bus.js'
+
 export default {
   name: 'hello',
   data() {
@@ -15,7 +17,8 @@ export default {
   },
   methods: {
     testClick: function () {
-      this.msg = 'foo'
+      this.msg = 'yellow'
+      Bus.$emit('setTheme','skin-yellow')
     }
   }
 }

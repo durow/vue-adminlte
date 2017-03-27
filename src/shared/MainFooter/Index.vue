@@ -10,7 +10,8 @@
 </template>
 
 <script>
-export default {
-    name: 'main-footer'
-}
+    export default {
+        name: 'main-footer'
+    }
+
 </script>
