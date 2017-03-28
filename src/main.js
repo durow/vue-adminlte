@@ -21,6 +21,19 @@ import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'admin-lte/dist/js/app.min.js'
 import 'admin-lte/dist/js/demo.js'
 
+router.beforeEach((to, from, next) => {
+  if (to.path == '/login') {next()}
+  else if (to.path == '/register') {next()}
+  else {
+    var user = localStorage.getItem('user')
+    if(!user || user == undefined){
+      next()
+    } else {
+      next()
+    }
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
