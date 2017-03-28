@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import Bus from '../bus.js'
-
 export default {
   name: 'hello',
   data() {

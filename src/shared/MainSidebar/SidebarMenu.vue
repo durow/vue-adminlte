@@ -58,40 +58,70 @@
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#" v-on:click="setSkinBlue" data-skin="skin-blue"><i class="btn btn-primary btn-xs" ></i>skin-blue</a></li>
-                <li><a href="#" v-on:click="setSkinBlueLight" data-skin="skin-blue-light"><i class="btn btn-primary btn-xs" ></i>skin-blue-light</a></li>
-                <li><a href="#" v-on:click="setSkinYellow"  data-skin="skin-yellow"><i class="btn btn-warning btn-xs" > </i>skin-yellow</a></li>
-                <li><a href="#" v-on:click="setSkinYellowLight"  data-skin="skin-yellow"><i class="btn btn-warning btn-xs" ></i>skin-yellow-light</a></li>
-                <li><a href="#" v-on:click="setSkinGreen"  data-skin="skin-green"><i class="btn btn-success btn-xs" ></i>skin-green</a></li>
-                <li><a href="#" v-on:click="setSkinGreenLight" data-skin="skin-green"><i class="btn btn-success btn-xs" ></i>skin-green-light</a></li>
-                <li><a href="#" v-on:click="setSkinPurple"  data-skin="skin-green"><i class="btn bg-purple btn-xs" ></i>skin-purple</a></li>
-                <li><a href="#" v-on:click="setSkinPurpleLight" data-skin="skin-green"><i class="btn bg-purple btn-xs" ></i>skin-purple-light</a></li>
-                <li><a href="#" v-on:click="setSkinRed"  data-skin="skin-green"><i class="btn btn-danger btn-xs" ></i>skin-red</a></li>
-                <li><a href="#" v-on:click="setSkinRedLight" data-skin="skin-green"><i class="btn btn-danger btn-xs" ></i>skin-red-light</a></li>
-                <li><a href="#" v-on:click="setSkinBlack"  data-skin="skin-green"><i class="btn bg-black btn-xs" ></i>skin-black</a></li>
-                <li><a href="#" v-on:click="setSkinBlackLight" data-skin="skin-green"><i class="btn bg-black btn-xs" ></i>skin-black-light</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinBlue"
+                       data-skin="skin-blue"><i class="btn btn-primary btn-xs" ></i>skin-blue</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinBlueLight"
+                       data-skin="skin-blue-light"><i class="btn btn-primary btn-xs" ></i>skin-blue-light</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinYellow"
+                       data-skin="skin-yellow"><i class="btn btn-warning btn-xs" > </i>skin-yellow</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinYellowLight"
+                       data-skin="skin-yellow"><i class="btn btn-warning btn-xs" ></i>skin-yellow-light</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinGreen"
+                       data-skin="skin-green"><i class="btn btn-success btn-xs" ></i>skin-green</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinGreenLight"
+                       data-skin="skin-green"><i class="btn btn-success btn-xs" ></i>skin-green-light</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinPurple"
+                       data-skin="skin-green"><i class="btn bg-purple btn-xs" ></i>skin-purple</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinPurpleLight"
+                       data-skin="skin-green"><i class="btn bg-purple btn-xs" ></i>skin-purple-light</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinRed"
+                       data-skin="skin-green"><i class="btn btn-danger btn-xs" ></i>skin-red</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinRedLight"
+                       data-skin="skin-green"><i class="btn btn-danger btn-xs" ></i>skin-red-light</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinBlack"
+                       data-skin="skin-green"><i class="btn bg-black btn-xs" ></i>skin-black</a></li>
+                <li><a href="#"
+                       v-on:click="setSkinBlackLight"
+                       data-skin="skin-green"><i class="btn bg-black btn-xs" ></i>skin-black-light</a></li>
             </ul>
         </li>
     </ul>
 </template>
 
 <script>
-import Bus from '../../bus.js'
-
 export default {
     methods: {
-        setSkinBlue: () => Bus.$emit('setTheme', 'skin-blue'),
-        setSkinBlueLight: () => Bus.$emit('setTheme', 'skin-blue-light'),
-        setSkinYellow: () => Bus.$emit('setTheme', 'skin-yellow'),
-        setSkinYellowLight: () => Bus.$emit('setTheme', 'skin-yellow-light'),
-        setSkinGreen: () => Bus.$emit('setTheme', 'skin-green'),
-        setSkinGreenLight: () => Bus.$emit('setTheme', 'skin-green-light'),
-        setSkinPurple: () => Bus.$emit('setTheme', 'skin-purple'),
-        setSkinPurpleLight: () => Bus.$emit('setTheme', 'skin-purple-light'),
-        setSkinRed: () => Bus.$emit('setTheme', 'skin-red'),
-        setSkinRedLight: () => Bus.$emit('setTheme', 'skin-red-light'),
-        setSkinBlack: () => Bus.$emit('setTheme', 'skin-black'),
-        setSkinBlackLight: () => Bus.$emit('setTheme', 'skin-black-light'),
+        setSkinBlue() {
+            this.$store.commit('setTheme', 'skin-blue')
+        },
+        setSkinBlueLight() {
+            this.$store.commit('setTheme', 'skin-blue-light')
+        },
+        setSkinYellow: function () {
+            this.$store.commit('setTheme', 'skin-yellow')
+        },
+        setSkinYellowLight() {
+            this.$store.commit('setTheme', 'skin-yellow-light')
+        },
+        // setSkinGreen: () => Bus.$emit('setTheme', 'skin-green'),
+        // setSkinGreenLight: () => Bus.$emit('setTheme', 'skin-green-light'),
+        // setSkinPurple: () => Bus.$emit('setTheme', 'skin-purple'),
+        // setSkinPurpleLight: () => Bus.$emit('setTheme', 'skin-purple-light'),
+        // setSkinRed: () => Bus.$emit('setTheme', 'skin-red'),
+        // setSkinRedLight: () => Bus.$emit('setTheme', 'skin-red-light'),
+        // setSkinBlack: () => Bus.$emit('setTheme', 'skin-black'),
+        // setSkinBlackLight: () => Bus.$emit('setTheme', 'skin-black-light'),
     }
 }
 </script>
