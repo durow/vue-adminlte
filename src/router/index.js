@@ -1,15 +1,44 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Home',
+      component: require('../Home.vue'),
+      children:[{
+        path:'',
+        component:require('../components/Welcom.vue')
+      },{
+        path:'/func1_1',
+        component:require('../components/Func1_1.vue')
+      },{
+        path:'/func1_2',
+        component:require('../components/Func1_2.vue')
+      },{
+        path:'/func1_3',
+        component:require('../components/Func1_3.vue')
+      },{
+        path:'/func1_4',
+        component:require('../components/Func1_4.vue')
+      },{
+        path:'/func1_5',
+        component:require('../components/Func1_5.vue')
+      }]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: require('../Login.vue')
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: require('../Register.vue')
     }
   ]
 })
