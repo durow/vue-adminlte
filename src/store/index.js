@@ -8,8 +8,8 @@ export default new Vuex.Store({
     theme: 'skin-blue'
   },
   mutations: {
-    setTheme(state, t) {
-      state.theme = t
+    setTheme(state, theme) {
+      state.theme = theme
     }
   }
 })
