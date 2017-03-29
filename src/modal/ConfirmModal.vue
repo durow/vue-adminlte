@@ -1,10 +1,11 @@
 <template>
-    <!-- 模态框（Modal） -->
+    <!-- 通知对话框 -->
     <div class="modal fade"
-         id="myModal"
+         data-backdrop="false"
+         id="confirmModal"
          tabindex="-1"
          role="dialog"
-         aria-labelledby="myModalLabel"
+         aria-labelledby="confirmModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -16,22 +17,25 @@
                         &times;
                     </button>
                     <h4 class="modal-title"
-                        id="myModalLabel">
-            					模态框（Modal）标题
-            				</h4>
+                        id="confirmModalLabel">请确认</h4>
                 </div>
-                <div class="modal-body">
-                    确认退出?
+                <div id='confirmModalContent'
+                     class="modal-body">
+    
                 </div>
                 <div class="modal-footer">
                     <button type="button"
-                            class="btn btn-default"
-                            data-dismiss="modal">关闭
+                            data-dismiss="modal"
+                            class="btn btn-success btn-md">
+                        确认
                     </button>
-                    <button type="button" v-on:click="logout"
-                            class="btn btn-danger">
-                        退出
+                    <button type="button"
+                            data-dismiss="modal"
+                            class="btn btn-primary btn-md">
+                        取消
                     </button>
+                    <div class="hidden"
+                         id="confirmResult"></div>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -39,14 +43,3 @@
         <!-- /.modal -->
     </div>
 </template>
-
-<script>
-export default {
-    methods: {
-        logout() {
-            localStorage.removeItem('user')
-            document.location.href = '/login'
-        }
-    }
-}
-</script>
