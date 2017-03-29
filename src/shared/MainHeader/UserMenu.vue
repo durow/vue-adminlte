@@ -46,9 +46,21 @@
                 </div>
                 <div class="pull-right">
                     <a href="#"
+                       v-on:click="logout"
                        class="btn btn-default btn-flat">安全退出</a>
                 </div>
             </li>
         </ul>
     </li>
 </template>
+
+<script>
+export default {
+    methods: {
+        logout() {
+            localStorage.removeItem('user')
+            document.location.href = '/login'
+        }
+    }
+}
+</script>

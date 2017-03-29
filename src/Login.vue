@@ -2,7 +2,7 @@
     <div class="login-container">
         <div class="login-win">
             <p class="login-header">
-                Warden-Web
+                Login
             </p>
             <div class="login-line"></div>
             <form action="/api/login"
@@ -20,8 +20,8 @@
                     </div>
                 </div>
                 <div class="login-buttons">
-                    <button type="submit"
-                            class="login-button">登录</button>
+                    <a href="#" v-on:click="login"
+                       class="login-button">登录</a>
                     <router-link class="login-button"
                                  to="/register">注册</router-link>
                 </div>
@@ -30,23 +30,39 @@
     </div>
 </template>
 
+<script>
+import router from './router'
+
+export default {
+    methods: {
+        login() {
+            //check user
+            localStorage.setItem('user', 'durow')
+            var path = location.hash.substr(1)
+            if(!path || path == '' || path == undefined){
+                path = '/'
+            }
+            location.href = path
+        }
+    }
+}
+</script>
+
 <style>
 .login-container {
     background: #21364c;
     color: white;
     width: 100vw;
     height: 100vh;
-    z-index: 9;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .login-win {
     width: 500px;
     height: 350px;
-    z-index: 7;
     background: rgba(17, 29, 47, .4);
     display: flex;
     flex-direction: column;
@@ -59,8 +75,9 @@
 .login-header {
     display: block;
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     text-align: center;
+    font-weight: bold;
     width: 100%;
 }
 
@@ -71,14 +88,13 @@
     border-radius: 5px;
     background: rgba(17, 29, 47, .4);
     font-size: 18px;
-    
 }
 
 .login-span {
-    width: 65px;
+    width: 60px;
     display: inline-block;
     text-align: right;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .login-form {
@@ -103,10 +119,10 @@
 }
 
 .login-button:hover {
-    color: yellow;
+    color: lightblue;
 }
 
-.login-main-form{
+.login-main-form {
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
