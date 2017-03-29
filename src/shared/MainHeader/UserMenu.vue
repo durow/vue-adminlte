@@ -17,7 +17,6 @@
                 <img src="../../assets/user.jpg"
                      class="img-circle"
                      alt="User Image">
-    
                 <p>
                     durow - 热爱生活
                     <small>加入时间: 2017.03</small>
@@ -46,8 +45,9 @@
                 </div>
                 <div class="pull-right">
                     <a href="#"
-                       v-on:click="logout"
-                       class="btn btn-default btn-flat">安全退出</a>
+                       class="btn btn-default btn-flat"
+                       data-toggle="modal"
+                       data-target="#myModal">安全退出</a>
                 </div>
             </li>
         </ul>

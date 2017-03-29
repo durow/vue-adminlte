@@ -8,6 +8,7 @@
     <div class="control-sidebar-bg"></div>
     <MainContent></MainContent>
     <MainFooter></MainFooter>
+    <Modals></Modals>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import MainSidebar from './shared/MainSidebar'
 import ControlSidebar from './shared/ControlSidebar'
 import MainFooter from './shared/MainFooter'
 import MainContent from './shared/MainContent'
+import Modals from './modal'
 
 export default {
   name: 'home',
@@ -25,7 +27,8 @@ export default {
     MainSidebar,
     ControlSidebar,
     MainFooter,
-    MainContent
+    MainContent,
+    Modals
   },
   data: function () {
     return {
