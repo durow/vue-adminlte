@@ -1,6 +1,6 @@
 <template>
     <!-- 通知对话框 -->
-    <div class="modal fade"
+    <div class="modal modal fade"
          data-backdrop="false"
          id="notifyModal"
          tabindex="-1"
@@ -9,7 +9,7 @@
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-primary">
                     <button type="button"
                             class="close"
                             data-dismiss="modal"
@@ -26,7 +26,7 @@
                 <div class="modal-footer">
                     <button type="button"
                             data-dismiss="modal"
-                            class="btn btn-primary btn-md">
+                            class="btn btn-primary btn-flat col-sm-2 col-sm-offset-10">
                         确认
                     </button>
                 </div>

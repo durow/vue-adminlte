@@ -16,3 +16,9 @@ export default {
     }
 }
 </script>
+
+<style>
+.modal-dialog {
+    box-shadow: 10px 10px 20px #000000;
+}
+</style>

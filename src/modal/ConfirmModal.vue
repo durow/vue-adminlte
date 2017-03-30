@@ -9,7 +9,7 @@
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-primary">
                     <h4 class="modal-title"
                         id="confirmModalLabel">{{modal.title}}</h4>
                 </div>
@@ -21,13 +21,13 @@
                     <button type="button"
                             data-dismiss="modal"
                             v-on:click="confirmClick"
-                            class="btn btn-success btn-md">
+                            class="btn btn-success btn-flat col-sm-2 col-sm-push-8">
                         {{modal.confirmButton}}
                     </button>
                     <button type="button"
                             v-on:click="cancelClick"
                             data-dismiss="modal"
-                            class="btn btn-primary btn-md">
+                            class="btn btn-primary btn-flat col-sm-2 col-sm-push-8">
                         {{modal.cancelButton}}
                     </button>
                     <div class="hidden"
@@ -46,18 +46,6 @@ export default {
         modal() {
             return this.$store.state.confirmModal
         },
-        // title(){
-        //     return this.$store.state.confirmModal.title
-        // },
-        // content(){
-        //     return this.$store.state.confirmModal.content
-        // },
-        // confirmButton(){
-        //     return this.$store.state.confirmModal.confirmButton            
-        // },
-        // cancelButton(){
-        //     return this.$store.state.confirmModal.cancelButton            
-        // }
     },
     methods: {
         confirmClick() {
@@ -69,3 +57,9 @@ export default {
     }
 }
 </script>
+
+<style>
+.modal-dialog {
+    box-shadow: 10px 10px 20px #000000;
+}
+</style>

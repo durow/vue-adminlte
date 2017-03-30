@@ -7,12 +7,21 @@ export default {
     $(modal).modal('show')
   },
 
-  showNotify(content, title = '通知' , option) {
+  showNotify(content, title = '通知' , closed, option) {
     store.commit('setNotifyModal', {
       title: title,
       content: content
     })
-    $('#notifyModal').modal(option)
+
+    var dlg = $('#notifyModal')
+
+    dlg.on('hide.bs.modal', function () {
+      if (closed) {
+        closed()
+      }
+      dlg.off('hide.bs.modal')
+    })
+    dlg.modal(option)
   },
 
   showConfirm(content, title = '请确认' , closed, option) {
