@@ -10,29 +10,25 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-hidden="true">
-                        &times;
-                    </button>
                     <h4 class="modal-title"
-                        id="confirmModalLabel">请确认</h4>
+                        id="confirmModalLabel">{{modal.title}}</h4>
                 </div>
                 <div id='confirmModalContent'
                      class="modal-body">
-    
+                    {{modal.content}}
                 </div>
                 <div class="modal-footer">
                     <button type="button"
                             data-dismiss="modal"
+                            v-on:click="confirmClick"
                             class="btn btn-success btn-md">
-                        确认
+                        {{modal.confirmButton}}
                     </button>
                     <button type="button"
+                            v-on:click="cancelClick"
                             data-dismiss="modal"
                             class="btn btn-primary btn-md">
-                        取消
+                        {{modal.cancelButton}}
                     </button>
                     <div class="hidden"
                          id="confirmResult"></div>
@@ -43,3 +39,33 @@
         <!-- /.modal -->
     </div>
 </template>
+
+<script>
+export default {
+    computed: {
+        modal() {
+            return this.$store.state.confirmModal
+        },
+        // title(){
+        //     return this.$store.state.confirmModal.title
+        // },
+        // content(){
+        //     return this.$store.state.confirmModal.content
+        // },
+        // confirmButton(){
+        //     return this.$store.state.confirmModal.confirmButton            
+        // },
+        // cancelButton(){
+        //     return this.$store.state.confirmModal.cancelButton            
+        // }
+    },
+    methods: {
+        confirmClick() {
+            this.$store.commit('setConfirmResult', this.modal.confirmButton)
+        },
+        cancelClick() {
+            this.$store.commit('setConfirmResult', this.modal.cancelButton)
+        }
+    }
+}
+</script>

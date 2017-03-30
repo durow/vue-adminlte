@@ -41,13 +41,14 @@
             <li class="user-footer">
                 <div class="pull-left">
                     <a href="#"
-                       class="btn btn-default btn-flat" data-toggle="modal" data-target="#notifyModal">个人信息</a>
+                       class="btn btn-default btn-flat"
+                       data-toggle="modal"
+                       data-target="#notifyModal">个人信息</a>
                 </div>
                 <div class="pull-right">
                     <a href="#"
-                       class="btn btn-default btn-flat"
-                       data-toggle="modal"
-                       data-target="#myModal">安全退出</a>
+                       v-on:click="logout"
+                       class="btn btn-default btn-flat">安全退出</a>
                 </div>
             </li>
         </ul>
@@ -55,11 +56,18 @@
 </template>
 
 <script>
+import modal from '../../modal/modal.js'
+
 export default {
     methods: {
         logout() {
-            localStorage.removeItem('user')
-            document.location.href = '/login'
+            modal.showYesNo('确认退出?', '请确认', result => {
+                if (result == '是') {
+                    localStorage.removeItem('user')
+                    document.location.href = '/login'
+                }
+            })
+
         }
     }
 }

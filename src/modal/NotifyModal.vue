@@ -17,10 +17,11 @@
                         &times;
                     </button>
                     <h4 class="modal-title"
-                        id="notifyModalLabel">通知</h4>
+                        id="notifyModalLabel">{{title}}</h4>
                 </div>
-                <div id='notifyModalContent' class="modal-body">
-                   
+                <div id='notifyModalContent'
+                     class="modal-body">
+                    {{content}}
                 </div>
                 <div class="modal-footer">
                     <button type="button"
@@ -35,3 +36,16 @@
         <!-- /.modal -->
     </div>
 </template>
+
+<script>
+export default {
+    computed: {
+        title() {
+            return this.$store.state.notifyModal.title
+        },
+        content() {
+            return this.$store.state.notifyModal.content
+        }
+    }
+}
+</script>

@@ -8,8 +8,8 @@
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><router-link to="/func1_1"><i class="fa fa-cog"></i>功能项1-1</router-link></li>
-                <li><router-link to="/func1_2"><i class="fa fa-circle-o"></i>功能项1-2</router-link></li>
+                <li><router-link to="/ModalTest"><i class="fa fa-cog"></i>对话框测试</router-link></li>
+                <li><router-link to="/LayoutTest"><i class="fa fa-circle-o"></i>布局测试</router-link></li>
                 <li><router-link to="/func1_3"><i class="fa fa-cubes"></i>功能项1-3</router-link></li>
                 <li><router-link to="/func1_4"><i class="fa fa-bookmark-o"></i>功能项1-4</router-link></li>
                 <li><router-link to="/func1_5"><i class="fa fa-calendar-plus-o"></i>功能项1-5</router-link></li>

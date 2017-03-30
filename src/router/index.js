@@ -14,11 +14,11 @@ export default new Router({
         path:'',
         component:require('../components/Welcom.vue')
       },{
-        path:'/func1_1',
-        component:require('../components/Func1_1.vue')
+        path:'/ModalTest',
+        component:require('../components/ModalTest.vue')
       },{
-        path:'/func1_2',
-        component:require('../components/Func1_2.vue')
+        path:'/LayoutTest',
+        component:require('../components/LayoutTest.vue')
       },{
         path:'/func1_3',
         component:require('../components/Func1_3.vue')

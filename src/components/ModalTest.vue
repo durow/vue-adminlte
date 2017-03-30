@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div><span>输入标题:</span>
+        <div>
+            <span>输入标题:</span>
             <input type="text"
                    v-model="notifyTitle">
             <span>输入内容:</span>
@@ -11,7 +12,8 @@
             <button class="btn btn-success btn-sm"
                     v-on:click="showConfirm">显示确认对话框</button>
             <button class="btn btn-success btn-sm"
-                    v-on:click="showConfirm2">显示确认对话框2</button>
+                    v-on:click="showYesNo">显示是否对话框</button>
+            <span id="yesnoResult">对话框返回结果:"<b>{{confirmResult}}</b>"</span>
         </div>
     </div>
 </template>
@@ -23,7 +25,8 @@ export default {
     data() {
         return {
             notifyContent: '内容',
-            notifyTitle: '标题'
+            notifyTitle: '标题',
+            confirmResult: '',
         }
     },
     methods: {
@@ -31,13 +34,15 @@ export default {
             modal.showNotify(this.notifyContent, this.notifyTitle)
         },
         showConfirm() {
-            modal.showConfirm(this.notifyContent, this.notifyTitle, function () {
-                alert(1)
+            var temp = this
+            modal.showConfirm(this.notifyContent, this.notifyTitle, result => {
+                temp.confirmResult = result
             })
         },
-        showConfirm2() {
-            modal.showConfirm(this.notifyContent, this.notifyTitle, function () {
-                alert('bar')
+        showYesNo() {
+            var temp = this
+            modal.showYesNo(this.notifyContent, this.notifyTitle, result => {
+                temp.confirmResult = result
             })
         }
     }
