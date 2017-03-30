@@ -9,7 +9,7 @@
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-primary">
+                <div class="modal-header" :class="bgColor">
                     <h4 class="modal-title"
                         id="confirmModalLabel">{{modal.title}}</h4>
                 </div>
@@ -46,6 +46,11 @@ export default {
         modal() {
             return this.$store.state.confirmModal
         },
+        bgColor() {
+            var theme = this.$store.state.theme.split('-')[1]
+            if(theme == 'black') theme = 'white'
+            return 'bg-' + theme
+        }
     },
     methods: {
         confirmClick() {
