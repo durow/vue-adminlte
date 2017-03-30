@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="callout callout-info">
-            <h4>常用对话框测试</h4>常用的通知，确认，是否等对话框的测试。在显示对话框时可以传入对话框结束时的回调，确认、是否等对话框可以获取关闭对话框时按下按钮的名称。</div>
+            <h4>常用对话框测试</h4>常用的通知，确认，是否等对话框的测试。在显示对话框时可以传入对话框结束时的回调，确认、是否等对话框可以获取关闭对话框时按下按钮的名称。
+        </div>
         <div class="form-horizontal">
             <div class="form-group">
                 <label class="col-sm-1 control-label">输入标题:</label>
