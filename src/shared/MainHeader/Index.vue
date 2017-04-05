@@ -1,5 +1,5 @@
 <template>
-    <header class="main-header">
+    <admin-header>
         <Logo></Logo>
         <nav class="navbar navbar-static-top"
              role="navigation">
@@ -20,7 +20,7 @@
                 </ul>
             </div>
         </nav>
-    </header>
+    </admin-header>
 </template>
 
 <script>
@@ -34,6 +34,8 @@ import HeaderMenu from './HeaderMenu.vue'
 import HeaderSearch from './HeaderSearch.vue'
 import ControlToggle from './ControlToggle.vue'
 
+import AdminHeader from '../../components/adminlte/AdminHeader.vue'
+
 export default {
     name: 'main-header',
     components: {
@@ -45,7 +47,8 @@ export default {
         TasksMenu,
         HeaderMenu,
         HeaderSearch,
-        ControlToggle
+        ControlToggle,
+        AdminHeader
     }
 }
 </script>

@@ -20,6 +20,9 @@ import 'admin-lte/dist/css/AdminLTE.min.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'admin-lte/dist/js/app.min.js'
 import 'admin-lte/dist/js/demo.js'
+// import bootstrap-vue
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
+Vue.use(BootstrapVue)
 
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') {next()}

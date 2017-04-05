@@ -4,40 +4,40 @@
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-arrows"></i>
-                <span>功能分组1</span>
+                <span>功能测试</span>
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><router-link to="/ModalTest"><i class="fa fa-cog"></i>对话框测试</router-link></li>
-                <li><router-link to="/LayoutTest"><i class="fa fa-circle-o"></i>布局测试</router-link></li>
-                <li><router-link to="/func1_3"><i class="fa fa-cubes"></i>功能项1-3</router-link></li>
+                <li><router-link to="/ModalTest"><i class="fa fa-cog"></i>对话框</router-link></li>
+                <li><router-link to="/LayoutTest"><i class="fa fa-circle-o"></i>布局</router-link></li>
+                <li><router-link to="/ElementTest"><i class="fa fa-cubes"></i>BootstrapVue测试</router-link></li>
                 <li><router-link to="/func1_4"><i class="fa fa-bookmark-o"></i>功能项1-4</router-link></li>
                 <li><router-link to="/func1_5"><i class="fa fa-calendar-plus-o"></i>功能项1-5</router-link></li>
             </ul>
         </li>
         <li class="treeview">
             <a href="#">
-                <i class="fa fa-bolt"></i>
-                <span>功能分组2</span>
+                <i class="fa fa-bar-chart"></i>
+                <span>AdminLTE组件</span>
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-feed"></i>功能项2-1</a></li>
-                <li><a href="#"><i class="fa fa-film"></i>功能项2-2</a></li>
-                <li><a href="#"><i class="fa fa-glass"></i>功能项2-3</a></li>
+                <li><router-link to="/AdminLTE/Alert"><i class="fa fa-circle-o"></i>Alert</router-link></li>
+                <li><router-link to="/AdminLTE/Callout"><i class="fa fa-circle-o"></i>Callout</router-link></li>
+                <li><router-link to="/AdminLTE/Progress"><i class="fa fa-circle-o"></i>Progress</router-link></li>
+                <li><a href="#"><i class="fa fa-star-o"></i>功能项3-3</a></li>
+                <li><a href="#"><i class="fa fa-tag"></i>功能项3-4</a></li>
             </ul>
         </li>
         <li class="treeview">
             <a href="#">
-                <i class="fa fa-bar-chart"></i>
-                <span>功能分组3</span>
+                <i class="fa fa-bolt"></i>
+                <span>Bootstrap Vue</span>
                 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-globe"></i>功能项3-1</a></li>
-                <li><a href="#"><i class="fa fa-sliders"></i>功能项3-2</a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i>功能项3-3</a></li>
-                <li><a href="#"><i class="fa fa-tag"></i>功能项3-4</a></li>
+                <li><router-link to="/BootstrapVue/Alert"><i class="fa fa-feed"></i>Alert</router-link></li>
+                <li><router-link to="/BootstrapVue/Badge"><i class="fa fa-feed"></i>Badge</router-link></li>
             </ul>
         </li>
         <li class="treeview">

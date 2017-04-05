@@ -14,6 +14,7 @@
   "dependencies": {
     "admin-lte": "^2.3.11",
     "bootstrap": "^3.3.7",
+    "bootstrap-vue": "^0.11.1",
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0",
     "jquery": "^2.2.3",
