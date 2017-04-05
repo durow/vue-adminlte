@@ -11,5 +11,8 @@ export default {
   },{
     path: 'AdminLte/Progress',
     component: require('../views/adminlte-vue/Progress.vue')
+  },{
+    path: 'AdminLte/Box',
+    component: require('../views/adminlte-vue/Box.vue')
   }]
 }

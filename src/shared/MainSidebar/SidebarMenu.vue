@@ -25,6 +25,7 @@
                 <li><router-link to="/AdminLTE/Alert"><i class="fa fa-circle-o"></i>Alert</router-link></li>
                 <li><router-link to="/AdminLTE/Callout"><i class="fa fa-circle-o"></i>Callout</router-link></li>
                 <li><router-link to="/AdminLTE/Progress"><i class="fa fa-circle-o"></i>Progress</router-link></li>
+                <li><router-link to="/AdminLTE/Box"><i class="fa fa-circle-o"></i>Box</router-link></li>
                 <li><a href="#"><i class="fa fa-star-o"></i>功能项3-3</a></li>
                 <li><a href="#"><i class="fa fa-tag"></i>功能项3-4</a></li>
             </ul>
