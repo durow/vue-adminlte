@@ -74,6 +74,28 @@
                      disabled>Button</lte-btn>
         </div>
         <br>
+        <label>icon:</label>
+        <div>
+            <lte-btn icon="fa fa-adjust">Button</lte-btn>
+            <lte-btn variant="success"
+                     icon="fa fa-at">Button</lte-btn>
+            <lte-btn variant="info"
+                     icon="fa fa-bolt">Button</lte-btn>
+            <lte-btn variant="warning"
+                     icon="fa fa-camera">Button</lte-btn>
+            <lte-btn variant="danger"
+                     icon="fa fa-clock-o">Button</lte-btn>
+            <lte-btn variant="primary"
+                     icon="fa fa-coffee">Button</lte-btn>
+            <lte-btn bg="gray"
+                     icon="fa fa-comments-o">Button</lte-btn>
+            <lte-btn bg="navy"
+                     icon="fa fa-edit">Button</lte-btn>
+            <lte-btn bg="purple"
+                     icon="fa fa-envelope-o"            
+                     disabled>Button</lte-btn>
+        </div>
+        <br>
         <label>block:</label>
         <div>
             <div class="col-md-3">
@@ -100,9 +122,44 @@
         <label>app-btn:</label>
         <div>
             <lte-app-btn>AppBtn</lte-app-btn>
-            <lte-app-btn icon="fa fa-map-o" badgeText=123>AppBtn</lte-app-btn>
-            <lte-app-btn icon="fa fa-language" badgeText=456 badge-bg="yellow">AppBtn</lte-app-btn>
-            <lte-app-btn icon="fa fa-thumbs-o-up" badgeText="new" badge-bg="red">AppBtn</lte-app-btn>
+            <lte-app-btn icon="fa fa-map-o"
+                         badgeText=123>AppBtn</lte-app-btn>
+            <lte-app-btn icon="fa fa-language"
+                         badgeText=456
+                         badge-bg="yellow">AppBtn</lte-app-btn>
+            <lte-app-btn icon="fa fa-thumbs-o-up"
+                         badgeText="new"
+                         badge-bg="red">AppBtn</lte-app-btn>
+        </div>
+        <br>
+        <label>btn-group:</label>
+        <div>
+            <lte-btn-group>
+                <lte-btn>left</lte-btn>
+                <lte-btn>middle</lte-btn>
+                <lte-btn>right</lte-btn>
+            </lte-btn-group>
+            <lte-btn-group>
+                <lte-btn variant="primary">1</lte-btn>
+                <lte-btn variant="info">2</lte-btn>
+                <lte-btn variant="success">3</lte-btn>
+                <lte-btn variant="warning">4</lte-btn>
+                <lte-btn variant="danger">5</lte-btn>
+            </lte-btn-group>
+            <lte-btn-group>
+                <lte-app-btn>AppBtn</lte-app-btn>
+                <lte-app-btn icon="fa fa-map-o">AppBtn</lte-app-btn>
+                <lte-app-btn icon="fa fa-language">AppBtn</lte-app-btn>
+                <lte-app-btn icon="fa fa-thumbs-o-up">AppBtn</lte-app-btn>
+            </lte-btn-group>
+            <lte-btn-group>
+                <lte-btn icon="fa fa-align-left"
+                         variant="primary"></lte-btn>
+                <lte-btn icon="fa fa-align-center"
+                         variant="primary"></lte-btn>
+                <lte-btn icon="fa fa-align-right"
+                         variant="primary"></lte-btn>
+            </lte-btn-group>
         </div>
     </div>
 </template>
@@ -110,11 +167,13 @@
 <script>
 import LteBtn from '../../components/adminlte-vue/Button.vue'
 import LteAppBtn from '../../components/adminlte-vue/AppButton.vue'
+import LteBtnGroup from '../../components/adminlte-vue/ButtonGroup.vue'
 
 export default {
     components: {
         LteBtn,
-        LteAppBtn
+        LteAppBtn,
+        LteBtnGroup
     }
 }
 </script>
