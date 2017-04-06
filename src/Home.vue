@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import MainHeader from './shared/MainHeader'
-import MainSidebar from './shared/MainSidebar'
-import ControlSidebar from './shared/ControlSidebar'
-import MainFooter from './shared/MainFooter'
-import MainContent from './shared/MainContent'
-import Modals from './modal'
+import MainHeader from './shared/MainHeader/Index.vue'
+import MainSidebar from './shared/MainSidebar/Index.vue'
+import ControlSidebar from './shared/ControlSidebar/Index.vue'
+import MainFooter from './shared/MainFooter/Index.vue'
+import MainContent from './shared/MainContent/Index.vue'
+import Modals from './modal/Index.vue'
 
 export default {
   name: 'home',
