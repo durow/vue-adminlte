@@ -4,22 +4,26 @@
         <div class="box-header"
              :class="[borderClass]">
             <h3 class="box-title">{{header}}</h3>
-    
             <div class="box-tools pull-right"
                  v-show="expandable">
                 <button type="button"
                         class="btn btn-box-tool"
                         data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
+                <button type="button"
+                        class="btn btn-box-tool"
+                        v-show="closeable"
+                        data-widget="remove"><i class="fa fa-times"></i></button>
             </div>
-            <!-- /.box-tools -->
         </div>
-        <!-- /.box-header -->
         <div class="box-body"
              style="display: block;">
             <slot></slot>
         </div>
-        <!-- /.box-body -->
+        <div class="overlay"
+             v-show="loading">
+            <i class="fa fa-refresh fa-spin"></i>
+        </div>
     </div>
 </template>
 
@@ -61,6 +65,14 @@ export default {
             default: false
         },
         solid: {
+            type: Boolean,
+            default: false
+        },
+        closeable: {
+            type: Boolean,
+            default: false
+        },
+        loading: {
             type: Boolean,
             default: false
         }
