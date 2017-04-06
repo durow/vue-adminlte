@@ -14,5 +14,8 @@ export default {
   },{
     path: 'AdminLte/Box',
     component: require('../views/adminlte-vue/Box.vue')
+  },{
+    path: 'AdminLte/Button',
+    component: require('../views/adminlte-vue/Button.vue')
   }]
 }

@@ -3,7 +3,7 @@
         <lte-progress variant="primary"
                       active
                       striped
-                      now-value=90></lte-progress>
+                      nowValue=90></lte-progress>
         <lte-progress variant="danger"
                       nowValue=70></lte-progress>
         <lte-progress variant="green"
