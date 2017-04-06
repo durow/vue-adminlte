@@ -38,29 +38,36 @@
                 </lte-box>
                 <lte-box variant="warning"
                          expandable
-                         header="icon:">
-                    <lte-btn icon="fa fa-adjust">Button</lte-btn>
+                         header="icon and badge:">
+                    <lte-btn icon="fa fa-adjust"
+                             badgeText="!"
+                             badgeBg="red">Button</lte-btn>
                     <lte-btn variant="success"
+                             badgeText="5"
                              icon="fa fa-at">Button</lte-btn>
                     <lte-btn variant="info"
+                             badgeText="N"
                              icon="fa fa-bolt">Button</lte-btn>
                     <lte-btn variant="warning"
+                             badgeText="34"
                              icon="fa fa-camera">Button</lte-btn>
                     <lte-btn variant="danger"
+                             badgeText="X"
                              icon="fa fa-clock-o">Button</lte-btn>
                     <lte-btn variant="primary"
-                             icon="fa fa-coffee">Button</lte-btn>
-                    <lte-btn bg="gray"
-                             icon="fa fa-comments-o">Button</lte-btn>
+                             icon="fa fa-facebook"></lte-btn>
+                    <lte-btn variant="success"
+                             badgeText="3"
+                             icon="fa fa-comments-o"></lte-btn>
                     <lte-btn bg="navy"
-                             icon="fa fa-edit">Button</lte-btn>
+                             icon="fa fa-edit"></lte-btn>
                     <lte-btn bg="purple"
                              icon="fa fa-envelope-o"
-                             disabled>Button</lte-btn>
+                             disabled></lte-btn>
                 </lte-box>
                 <lte-box variant="danger"
                          expandable
-                         header="app-btn">
+                         header="app-btn:">
                     <lte-app-btn>AppBtn</lte-app-btn>
                     <lte-app-btn icon="fa fa-map-o"
                                  badgeText=123>AppBtn</lte-app-btn>
@@ -70,6 +77,12 @@
                     <lte-app-btn icon="fa fa-thumbs-o-up"
                                  badgeText="new"
                                  badge-bg="red">AppBtn</lte-app-btn>
+                    <lte-app-btn icon="fa fa-language"
+                                 badgeText=456
+                                 badge-bg="yellow"></lte-app-btn>
+                    <lte-app-btn icon="fa fa-thumbs-o-up"
+                                 badgeText="new"
+                                 badge-bg="red"></lte-app-btn>
                 </lte-box>
                 <lte-box variant="success"
                          expandable
@@ -188,9 +201,16 @@
                     </lte-btn-group>
                 </lte-box>
                 <lte-box variant="danger"
+                         expandable
                          header="split-button:">
                     <lte-split-btn text="SplitButton"
-                                   :menu="menu"
+                                   :items="menu"></lte-split-btn>
+                    <lte-split-btn text="SplitButton"
+                                   variant="success"
+                                   badgeText="N"
+                                   :items="menu"></lte-split-btn>
+                    <lte-split-btn text="SplitButton"
+                                   :items="menu"
                                    icon="fa fa-link"
                                    variant="primary">
                         <lte-link-item icon="fa fa-link">link-item1</lte-link-item>
@@ -198,6 +218,30 @@
                         <lte-router-item icon="fa fa-beer">router-item1</lte-router-item>
                         <lte-router-item icon="fa fa-registered">router-item2</lte-router-item>
                     </lte-split-btn>
+                </lte-box>
+                <lte-box expandable
+                         header="ImageButton and IconButton">
+                    <lte-img-btn icon="fa fa-facebook"
+                                 variant="primary">ImageButton</lte-img-btn>
+                    <lte-img-btn icon="fa fa-github"
+                                 bg="black">ImageButton</lte-img-btn>
+                    <lte-img-btn icon="fa fa-twitter"
+                                 variant="info">ImageButton</lte-img-btn>
+                    <lte-icon-btn icon="fa fa-facebook"
+                                  variant="primary"></lte-icon-btn>
+                    <lte-icon-btn icon="fa fa-github"
+                                  bg="black"></lte-icon-btn>
+                    <lte-icon-btn icon="fa fa-twitter"
+                                  variant="info"></lte-icon-btn>
+                    <lte-icon-btn flat
+                                  icon="fa fa-facebook"
+                                  variant="primary"></lte-icon-btn>
+                    <lte-icon-btn flat
+                                  icon="fa fa-github"
+                                  bg="black"></lte-icon-btn>
+                    <lte-icon-btn flat
+                                  icon="fa fa-twitter"
+                                  variant="info"></lte-icon-btn>
                 </lte-box>
             </div>
         </div>
@@ -212,36 +256,41 @@ import LteSplitBtn from '../../components/adminlte-vue/SplitButton.vue'
 import LteBox from '../../components/adminlte-vue/Box.vue'
 import LteLinkItem from '../../components/adminlte-vue/LinkItem.vue'
 import LteRouterItem from '../../components/adminlte-vue/RouterItem.vue'
+import LteImgBtn from '../../components/adminlte-vue/ImageButton.vue'
+import LteIconBtn from '../../components/adminlte-vue/IconButton.vue'
 
 export default {
     data() {
         return {
             menu: [{
-                href: '#',
-                type: 'router',
+                to: '/',
                 text: 'router-link1',
-                icon:'fa fa-link'
+                icon: 'fa fa-ban',
             }, {
-                href: '#',
-                type: 'router',
+                to: '#',
                 text: 'router-link2',
-                icon:'fa fa-link'                
+                icon: 'fa fa-edit'
             }, {
-                href: '#',
-                type: 'router',
+                to: '#',
                 text: 'router-link3',
-                icon:'fa fa-link'                
+                icon: 'fa fa-stop'
             }, {
-                href: '#',
+                to: '#',
                 type: 'a',
                 text: 'a-link1',
-                icon:'fa fa-link'                
+                icon: 'fa fa-user',
             }, {
-                href: '#',
+                to: '#',
                 type: 'a',
                 text: 'a-link2',
-                icon:'fa fa-link'                
+                icon: 'fa fa-play'
             }]
+        }
+    },
+    methods: {
+        onClick() {
+            alert(1)
+            console.debug('click')
         }
     },
     components: {
@@ -251,7 +300,9 @@ export default {
         LteBox,
         LteSplitBtn,
         LteLinkItem,
-        LteRouterItem
+        LteRouterItem,
+        LteImgBtn,
+        LteIconBtn,
     }
 }
 </script>

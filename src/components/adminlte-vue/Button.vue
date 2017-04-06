@@ -3,8 +3,10 @@
           class="btn"
           :class="[variantClass,sizeClass,blockClass,bgClass,flatClass]"
           :disabled="disabled">
-    <i :class="icon"></i>
+    <i v-if="icon" :class="icon"></i>
     <slot></slot>
+    <span class="badge" v-if="badgeText"
+          :class="badgeBgClass">{{badgeText}}</span>
   </button>
 </template>
 
@@ -16,6 +18,11 @@ export default {
     blockClass() { return this.block ? 'btn-block' : '' },
     bgClass() { return this.bg ? `bg-${this.bg}` : '' },
     flatClass() { return this.flat ? 'btn-flat' : '' },
+    badgeBgClass() {
+      if (this.badgeBg) {
+        return `bg-${this.badgeBg}`
+      }
+    }
   },
   props: {
     variant: {
@@ -45,6 +52,14 @@ export default {
     icon: {
       type: String,
       default: undefined
+    },
+    badgeBg: {
+      type: String,
+      default: undefined
+    },
+    badgeText: {
+      type: String,
+      default: ''
     }
   }
 }

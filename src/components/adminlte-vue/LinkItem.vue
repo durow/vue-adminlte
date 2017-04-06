@@ -1,8 +1,7 @@
 <template>
   <li>
     <a :href="href">
-      <i :class="icon"></i>
-      <slot></slot>
+      <i :class="icon"></i><slot></slot>
     </a>
   </li>
 </template>

@@ -3,7 +3,11 @@
     <button type="button"
             class="btn"
             :class="variantClass">
-      <i :class="icon"></i> {{text}}
+      <i v-if="icon"
+         :class="icon"></i> {{text}}
+      <span class="badge"
+            v-if="badgeText"
+            :class="badgeBgClass">{{badgeText}}</span>
     </button>
     <button type="button"
             class="btn dropdown-toggle"
@@ -16,17 +20,18 @@
         role="menu">
       <slot></slot>
       <li>
-        <a v-for="i in menu"
+        <a v-for="i in items"
            v-if="i.type=='a'"
-           :href="i.href">
-          <i :class="i.icon"></i>{{i.text}}
+           v-on:click="i.click"
+           :href="i.to">
+          <i :class="i.icon"></i> {{i.text}}
         </a>
       </li>
       <li>
-        <router-link v-for="i in menu"
-                     v-if="i.type=='router'"
-                     :to="i.href">
-          <i :class="i.icon"></i>{{i.text}}
+        <router-link v-for="i in items"
+                     v-if="!i.type || i.type=='router'"
+                     :to="i.to">
+          <i :class="i.icon"></i> {{i.text}}
         </router-link>
       </li>
     </ul>
@@ -38,6 +43,11 @@ export default {
   computed: {
     variantClass() {
       return `btn-${this.variant}`
+    },
+    badgeBgClass() {
+      if (this.badgeBg) {
+        return `bg-${this.badgeBg}`
+      }
     }
   },
   props: {
@@ -49,11 +59,19 @@ export default {
       type: String,
       default: ''
     },
-    menu: {
-      type: Object,
+    items: {
+      type: Array,
       default: undefined
     },
     icon: {
+      type: String,
+      default: undefined
+    },
+    badgeBg: {
+      type: String,
+      default: undefined
+    },
+    badgeText: {
       type: String,
       default: ''
     }

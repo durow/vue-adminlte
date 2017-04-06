@@ -1,6 +1,7 @@
 <template>
     <a class="btn btn-app">
         <span class="badge"
+              v-if="badgeText"
               :class="badgeBgClass">{{badgeText}}</span>
         <i :class="icon"></i>
         <slot></slot>
@@ -31,4 +32,5 @@ export default {
         }
     }
 }
+
 </script>

@@ -1,8 +1,7 @@
 <template>
   <li>
     <router-link :to="to">
-      <i :class="icon"></i>
-      <slot></slot>
+      <i :class="icon"></i><slot></slot>
     </router-link>
   </li>
 </template>
