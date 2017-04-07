@@ -17,5 +17,8 @@ export default {
   },{
     path: 'AdminLte/Button',
     component: require('../views/adminlte-vue/Button.vue')
+  },{
+    path: 'AdminLte/Carousel',
+    component: require('../views/adminlte-vue/Carousel.vue')
   }]
 }

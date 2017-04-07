@@ -27,8 +27,7 @@
                 <li><router-link to="/AdminLTE/Progress"><i class="fa fa-circle-o"></i>Progress</router-link></li>
                 <li><router-link to="/AdminLTE/Box"><i class="fa fa-circle-o"></i>Box</router-link></li>
                 <li><router-link to="/AdminLTE/Button"><i class="fa fa-circle-o"></i>Button</router-link></li>
-                <li><a href="#"><i class="fa fa-star-o"></i>功能项3-3</a></li>
-                <li><a href="#"><i class="fa fa-tag"></i>功能项3-4</a></li>
+                <li><router-link to="/AdminLTE/Carousel"><i class="fa fa-circle-o"></i>Carousel</router-link></li>
             </ul>
         </li>
         <li class="treeview">
