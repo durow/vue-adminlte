@@ -1,7 +1,9 @@
 <template>
   <li>
     <a :href="href">
-      <i :class="icon"></i><slot></slot>
+      <i v-if="icon"
+         :class="icon"></i>
+      <slot></slot>
     </a>
   </li>
 </template>
@@ -17,6 +19,6 @@ export default {
       type: String,
       default: ''
     }
-  }
+  },
 }
 </script>

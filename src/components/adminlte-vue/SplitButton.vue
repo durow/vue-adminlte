@@ -2,16 +2,14 @@
   <div class="btn-group">
     <button type="button"
             class="btn"
-            :class="variantClass">
+            :class="[variantClass,flatClass]"
+            @click="onClick">
       <i v-if="icon"
          :class="icon"></i> {{text}}
-      <span class="badge"
-            v-if="badgeText"
-            :class="badgeBgClass">{{badgeText}}</span>
     </button>
     <button type="button"
             class="btn dropdown-toggle"
-            :class="variantClass"
+            :class="[variantClass,flatClass]"
             data-toggle="dropdown">
       <span class="caret"></span>
       <span class="sr-only">Toggle Dropdown</span>
@@ -19,35 +17,35 @@
     <ul class="dropdown-menu"
         role="menu">
       <slot></slot>
-      <li>
-        <a v-for="i in items"
-           v-if="i.type=='a'"
-           v-on:click="i.click"
-           :href="i.to">
-          <i :class="i.icon"></i> {{i.text}}
-        </a>
-      </li>
-      <li>
-        <router-link v-for="i in items"
-                     v-if="!i.type || i.type=='router'"
-                     :to="i.to">
-          <i :class="i.icon"></i> {{i.text}}
-        </router-link>
-      </li>
+      <template v-for="item in items">
+        <LinkItem v-if="item.type=='a'"
+                  :href="item.href?item.href:'#'"
+                  :icon="item.icon?item.icon:''"> {{item.text}}</LinkItem>
+        <RouterItem v-if="!item.type || item.type=='r'"
+                    :to="item.to?item.to:'#'"
+                    :icon="item.icon?item.icon:''"> {{item.text}}</RouterItem>
+        <ButtonItem v-if="item.type=='b'"
+                    @click="item.click"
+                    :icon="item.icon?item.icon:''"> {{item.text}}</ButtonItem>
+        <Divider v-if="item.type=='d'"></Divider>
+      </template>
     </ul>
   </div>
 </template>
 
 <script>
+import ButtonItem from './ButtonItem.vue'
+import LinkItem from './LinkItem.vue'
+import RouterItem from './RouterItem.vue'
+import Divider from './Divider.vue'
+
 export default {
   computed: {
     variantClass() {
       return `btn-${this.variant}`
     },
-    badgeBgClass() {
-      if (this.badgeBg) {
-        return `bg-${this.badgeBg}`
-      }
+    flatClass() {
+      return this.flat ? 'btn-flat' : ''
     }
   },
   props: {
@@ -67,14 +65,21 @@ export default {
       type: String,
       default: undefined
     },
-    badgeBg: {
-      type: String,
-      default: undefined
-    },
-    badgeText: {
-      type: String,
-      default: ''
+    flat: {
+      type: Boolean,
+      default: false
     }
+  },
+  methods: {
+    onClick() {
+      this.$emit('click')
+    }
+  },
+  components: {
+    ButtonItem,
+    LinkItem,
+    RouterItem,
+    Divider
   }
 }
 </script>

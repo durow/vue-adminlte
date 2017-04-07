@@ -207,16 +207,18 @@
                                    :items="menu"></lte-split-btn>
                     <lte-split-btn text="SplitButton"
                                    variant="success"
-                                   badgeText="N"
                                    :items="menu"></lte-split-btn>
                     <lte-split-btn text="SplitButton"
                                    :items="menu"
                                    icon="fa fa-link"
+                                   @click="splitClick"
                                    variant="primary">
                         <lte-link-item icon="fa fa-link">link-item1</lte-link-item>
-                        <lte-link-item icon="fa fa-hourglass-start">link-item2</lte-link-item>
+                        <lte-button-item @click="onClick"
+                                         icon="fa fa-hourglass-start">button-item1</lte-button-item>
                         <lte-router-item icon="fa fa-beer">router-item1</lte-router-item>
                         <lte-router-item icon="fa fa-registered">router-item2</lte-router-item>
+                        <lte-divider></lte-divider>
                     </lte-split-btn>
                 </lte-box>
                 <lte-box expandable
@@ -256,33 +258,37 @@ import LteSplitBtn from '../../components/adminlte-vue/SplitButton.vue'
 import LteBox from '../../components/adminlte-vue/Box.vue'
 import LteLinkItem from '../../components/adminlte-vue/LinkItem.vue'
 import LteRouterItem from '../../components/adminlte-vue/RouterItem.vue'
+import LteButtonItem from '../../components/adminlte-vue/ButtonItem.vue'
 import LteImgBtn from '../../components/adminlte-vue/ImageButton.vue'
 import LteIconBtn from '../../components/adminlte-vue/IconButton.vue'
+import LteDivider from '../../components/adminlte-vue/Divider.vue'
 
 export default {
     data() {
         return {
             menu: [{
-                to: '/',
                 text: 'router-link1',
                 icon: 'fa fa-ban',
             }, {
-                to: '#',
                 text: 'router-link2',
                 icon: 'fa fa-edit'
             }, {
-                to: '#',
-                text: 'router-link3',
-                icon: 'fa fa-stop'
+                type: 'd'
             }, {
-                to: '#',
+                type: 'b',
+                text: 'button-link1',
+                icon: 'fa fa-stop',
+                click() { alert('button-link1') }
+            }, {
+                type: 'b',
+                text: 'button-link2',
+                icon: 'fa fa-user',
+                click() { alert('button-link2') }
+            }, {
+                type: 'd'
+            }, {
                 type: 'a',
                 text: 'a-link1',
-                icon: 'fa fa-user',
-            }, {
-                to: '#',
-                type: 'a',
-                text: 'a-link2',
                 icon: 'fa fa-play'
             }]
         }
@@ -290,7 +296,9 @@ export default {
     methods: {
         onClick() {
             alert(1)
-            console.debug('click')
+        },
+        splitClick() {
+            alert('SplitButton clicked!')
         }
     },
     components: {
@@ -303,6 +311,8 @@ export default {
         LteRouterItem,
         LteImgBtn,
         LteIconBtn,
+        LteButtonItem,
+        LteDivider,
     }
 }
 </script>

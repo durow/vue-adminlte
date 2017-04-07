@@ -1,23 +1,25 @@
 <template>
   <li>
-    <router-link :to="to">
+    <a @click="onClick"
+       href="javascript:void(0)">
       <i v-if="icon"
          :class="icon"></i>
       <slot></slot>
-    </router-link>
+    </a>
   </li>
 </template>
 
 <script>
 export default {
   props: {
-    to: {
-      type: String,
-      default: '#'
-    },
     icon: {
       type: String,
-      default: ''
+      default: null
+    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('click')
     }
   }
 }

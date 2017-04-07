@@ -2,7 +2,8 @@
   <button type="button"
           class="btn"
           :class="[variantClass,sizeClass,blockClass,bgClass,flatClass]"
-          :disabled="disabled">
+          :disabled="disabled"
+          @click="onClick">
     <i v-if="icon" :class="icon"></i>
     <slot></slot>
     <span class="badge" v-if="badgeText"
@@ -60,6 +61,11 @@ export default {
     badgeText: {
       type: String,
       default: ''
+    }
+  },
+  methods:{
+    onClick(){
+      this.$emit('click')
     }
   }
 }
