@@ -20,5 +20,8 @@ export default {
   },{
     path: 'AdminLte/Carousel',
     component: require('../views/adminlte-vue/Carousel.vue')
+  },{
+    path: 'AdminLte/TextBox',
+    component: require('../views/adminlte-vue/TextBox.vue')
   }]
 }
