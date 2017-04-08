@@ -4,9 +4,11 @@
           :class="[variantClass,sizeClass,blockClass,bgClass,flatClass]"
           :disabled="disabled"
           @click="onClick">
-    <i v-if="icon" :class="icon"></i>
+    <i v-if="icon"
+       :class="icon"></i>
     <slot></slot>
-    <span class="badge" v-if="badgeText"
+    <span class="badge"
+          v-if="badgeText"
           :class="badgeBgClass">{{badgeText}}</span>
   </button>
 </template>
@@ -63,8 +65,8 @@ export default {
       default: ''
     }
   },
-  methods:{
-    onClick(){
+  methods: {
+    onClick() {
       this.$emit('click')
     }
   }

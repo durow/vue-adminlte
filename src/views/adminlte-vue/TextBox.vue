@@ -3,6 +3,7 @@
     <lte-textbox label="Label:"
                  placeholder="input text here!"
                  :disabled="inputDisabled"
+                 :validation='isEmpty'
                  @change="onChange($event)"
                  @input="onInput($event)">
     </lte-textbox>
@@ -47,6 +48,20 @@ export default {
     },
     btnClick() {
       this.checkTest = !this.checkTest
+    },
+    isEmpty(v) {
+      if (!v || v == '') {
+        return {
+          success: false,
+          text: `text can't empty`,
+          status: 'has-error'
+        }
+      } else {
+        return {
+          success: true,
+          status: 'has-success'
+        }
+      }
     }
   },
   components: {

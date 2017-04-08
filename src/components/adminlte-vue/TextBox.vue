@@ -2,7 +2,8 @@
   <div>
     <div v-if="horizontal"
          class="form-horizontal">
-      <div class="form-group">
+      <div class="form-group"
+           :class="validationStatus">
         <label v-if="label"
                for="mytextboxv"
                class="control-label"
@@ -22,11 +23,12 @@
       </div>
     </div>
     <div class="form-group"
+         :class="validationStatus"
          v-if="!horizontal">
       <label v-if="label"
              for="mytextboxh">{{label}}</label>
       <input type="text"
-             :value="text"
+             v-model="nowText"
              :disabled="disabled"
              class="form-control"
              id="mytextboxh"
@@ -35,12 +37,25 @@
              @input="onInput($event.target.value)"
              @focus="$emit('focus')"
              @blur="emit('blur')">
+      <span v-show="showError"
+            class="help-block">{{errorText}}</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  created(){
+    this.nowText = this.text
+  },
+  data() {
+    return {
+      validationStatus: '',
+      errorText: '',
+      showError: false,
+      nowText:''
+    }
+  },
   computed: {
     labelWidthClass() {
       return this.labelWidth ? `col-sm-${this.labelWidth}` : 'col-sm-1'
@@ -53,6 +68,9 @@ export default {
       } else {
         return 'col-sm-11'
       }
+    },
+    validationClass() {
+      return this.validation ? `has-${this.validation}` : ''
     }
   },
   props: {
@@ -82,11 +100,25 @@ export default {
     textWidth: {
       type: Number,
       default: undefined
+    },
+    validation: {
+      type: Function,
+      default: undefined
     }
   },
   methods: {
     onChange(v) {
+      if (this.validation) {
+        var result = this.validation(v)
+        if (result.success) {
+          this.showError = false
+        } else {
+          this.errorText = result.text
+          this.showError = true
+        }
+      }
       this.$emit('change', v)
+      this.validationStatus = result.status
     },
     onInput(v) {
       this.$emit('input', v)
