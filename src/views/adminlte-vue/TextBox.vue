@@ -4,14 +4,18 @@
                  placeholder="input text here!"
                  :disabled="inputDisabled"
                  :validation='isEmpty'
-                 @change="onChange($event)"
-                 @input="onInput($event)">
+                 @change="out=$event"
+                 @input="inputing=$event"
+                 @validationChange="valResult=$event">
     </lte-textbox>
     <label>input:</label>
     <div>{{inputing}}</div>
     <br>
     <label>change:</label>
     <div>{{out}}</div>
+    <br>
+    <label>validationResult:</label>
+    <div>{{valResult}}</div>
     <br>
     <div>
       <lte-checkbox :checked="checkTest"
@@ -31,17 +35,12 @@ export default {
     return {
       out: '',
       inputing: '',
+      valResult: true,
       inputDisabled: false,
       checkTest: true
     }
   },
   methods: {
-    onChange(v) {
-      this.out = v
-    },
-    onInput(v) {
-      this.inputing = v
-    },
     checkChange(v) {
       this.inputDisabled = v
       this.checkTest = v
@@ -54,12 +53,18 @@ export default {
         return {
           success: false,
           text: `text can't empty`,
-          status: 'has-error'
+        }
+      } else if (v.length < 10) {
+        return {
+          success: false,
+          status: 'has-warning',
+          text: 'text is too short!'
         }
       } else {
         return {
           success: true,
-          status: 'has-success'
+          status: 'has-success',
+          text: 'success!'
         }
       }
     }

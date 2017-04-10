@@ -29,6 +29,7 @@
                 <li><router-link to="/AdminLTE/Button"><i class="fa fa-circle-o"></i>Button</router-link></li>
                 <li><router-link to="/AdminLTE/Carousel"><i class="fa fa-circle-o"></i>Carousel</router-link></li>
                 <li><router-link to="/AdminLTE/TextBox"><i class="fa fa-circle-o"></i>TextBox</router-link></li>
+                <li><router-link to="/AdminLTE/Radio"><i class="fa fa-circle-o"></i>Radio</router-link></li>
             </ul>
         </li>
         <li class="treeview">

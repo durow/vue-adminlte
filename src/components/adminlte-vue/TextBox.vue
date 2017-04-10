@@ -10,10 +10,10 @@
                :class="labelWidthClass">{{label}}</label>
         <div :class="textWidthClass">
           <input type="text"
-                 :value="text"
-                 class="form-control"
-                 id="mytextboxv"
+                 v-model="nowText"
                  :disabled="disabled"
+                 class="form-control"
+                 id="mytextboxh"
                  :placeholder="placeholder"
                  @change="onChange($event.target.value)"
                  @input="onInput($event.target.value)"
@@ -45,15 +45,20 @@
 
 <script>
 export default {
-  created(){
+  created() {
     this.nowText = this.text
   },
   data() {
     return {
       validationStatus: '',
+      validationResult: true,
       errorText: '',
-      showError: false,
-      nowText:''
+      nowText: ''
+    }
+  },
+  watch: {
+    text(v) {
+      this.nowText = v
     }
   },
   computed: {
@@ -69,8 +74,8 @@ export default {
         return 'col-sm-11'
       }
     },
-    validationClass() {
-      return this.validation ? `has-${this.validation}` : ''
+    showError() {
+      return this.errorText && this.errorText != ''
     }
   },
   props: {
@@ -110,15 +115,18 @@ export default {
     onChange(v) {
       if (this.validation) {
         var result = this.validation(v)
+        this.errorText = result.text
         if (result.success) {
-          this.showError = false
+          this.validationStatus = result.status ? result.status : ''
         } else {
-          this.errorText = result.text
-          this.showError = true
+          this.validationStatus = result.status ? result.status : 'has-error'
+        }
+        if (this.validationResult != result.success) {
+          this.validationResult = result.success
+          this.$emit('validationChange', this.validationResult)
         }
       }
       this.$emit('change', v)
-      this.validationStatus = result.status
     },
     onInput(v) {
       this.$emit('input', v)

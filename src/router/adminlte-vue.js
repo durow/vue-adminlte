@@ -23,5 +23,8 @@ export default {
   },{
     path: 'AdminLte/TextBox',
     component: require('../views/adminlte-vue/TextBox.vue')
+  },{
+    path: 'AdminLte/Radio',
+    component: require('../views/adminlte-vue/Radio.vue')
   }]
 }
