@@ -2,9 +2,10 @@
   <div class="radio">
     <label>
       <input type="radio"
-             :class="checkClass"
+             :class="checkedClass"
              :name="group"
              :value="value"
+             :disabled="disabled"
              @change="onChange">
       <slot></slot>
     </label>
@@ -15,24 +16,16 @@
 export default {
   mounted() {
     if (this.checked) {
-      console.debug('begin')
       var inputList = document.getElementsByClassName('my-radio-checked')
-      console.debug(inputList.length)
       if (inputList.length > 0) {
-        console.debug('found')
         var el = inputList[inputList.length - 1]
         el.checked = 'checked'
         this.$emit('change', el.value)
       }
     }
   },
-  data() {
-    return {
-      isChecked: undefined
-    }
-  },
   computed: {
-    checkClass() {
+    checkedClass() {
       return this.checked ? 'my-radio-checked' : ''
     }
   },
@@ -48,6 +41,10 @@ export default {
     checked: {
       type: Boolean,
       default: undefined
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

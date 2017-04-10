@@ -2,7 +2,8 @@
   <div class="checkbox">
     <label>
       <input type="checkbox"
-             v-model="isChecked">
+             v-model="isChecked"
+             :disabled="disabled">
       <slot></slot>
     </label>
   </div>
@@ -28,6 +29,10 @@ export default {
   },
   props: {
     checked: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }

@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="col-md-4">
-      <lte-Box header="Group1"
+      <lte-Box header="Example"
+               icon="fa fa-info"
                variant="info">
         <lte-radio group="group1"
                    @change="selectedRadio=$event"
@@ -31,7 +32,7 @@
           <span style="color:purple">purple</span>
         </lte-radio>
         <hr>
-        <label>selected is {{selectedRadio}}</label>
+        <label :style="textStyle">selected is {{selectedRadio}}</label>
       </lte-Box>
     </div>
   </div>
@@ -46,6 +47,13 @@ export default {
   data() {
     return {
       selectedRadio: ''
+    }
+  },
+  computed: {
+    textStyle() {
+      if (this.selectedRadio) {
+        return `color:${this.selectedRadio}`
+      }
     }
   },
   components: {
