@@ -1,7 +1,7 @@
 <template>
   <div>
-    <lte-textbox label="Label:"
-                 placeholder="input text here!"
+    <label>input:</label>
+    <lte-textbox placeholder="input text here!"
                  :disabled="inputDisabled"
                  :validation='isEmpty'
                  @change="out=$event"

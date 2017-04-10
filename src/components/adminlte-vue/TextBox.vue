@@ -1,44 +1,25 @@
 <template>
-  <div>
-    <div v-if="horizontal"
-         class="form-horizontal">
-      <div class="form-group"
-           :class="validationStatus">
-        <label v-if="label"
-               for="mytextboxv"
-               class="control-label"
-               :class="labelWidthClass">{{label}}</label>
-        <div :class="textWidthClass">
-          <input type="text"
-                 v-model="nowText"
-                 :disabled="disabled"
-                 class="form-control"
-                 id="mytextboxh"
-                 :placeholder="placeholder"
-                 @change="onChange($event.target.value)"
-                 @input="onInput($event.target.value)"
-                 @focus="$emit('focus')"
-                 @blur="emit('blur')">
-        </div>
-      </div>
-    </div>
+  <div class="form-horizontal">
     <div class="form-group"
-         :class="validationStatus"
-         v-if="!horizontal">
+         :class="validationStatus">
       <label v-if="label"
-             for="mytextboxh">{{label}}</label>
-      <input type="text"
-             v-model="nowText"
-             :disabled="disabled"
-             class="form-control"
-             id="mytextboxh"
-             :placeholder="placeholder"
-             @change="onChange($event.target.value)"
-             @input="onInput($event.target.value)"
-             @focus="$emit('focus')"
-             @blur="emit('blur')">
-      <span v-show="showError"
-            class="help-block">{{errorText}}</span>
+             for="mytextboxv"
+             class="control-label"
+             :class="labelWidthClass">{{label}}</label>
+      <div :class="textWidthClass">
+        <input type="text"
+               v-model="nowText"
+               :disabled="disabled"
+               class="form-control"
+               id="mytextboxh"
+               :placeholder="placeholder"
+               @change="onChange($event.target.value)"
+               @input="onInput($event.target.value)"
+               @focus="$emit('focus')"
+               @blur="emit('blur')">
+        <span v-show="showError"
+              class="help-block">{{errorText}}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -87,10 +68,6 @@ export default {
       default: null
     },
     disabled: {
-      type: Boolean,
-      default: false
-    },
-    horizontal: {
       type: Boolean,
       default: false
     },

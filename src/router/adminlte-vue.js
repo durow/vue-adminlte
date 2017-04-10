@@ -26,5 +26,8 @@ export default {
   },{
     path: 'AdminLte/Radio',
     component: require('../views/adminlte-vue/Radio.vue')
+  },{
+    path: 'AdminLte/ComboBox',
+    component: require('../views/adminlte-vue/ComboBox.vue')
   }]
 }
