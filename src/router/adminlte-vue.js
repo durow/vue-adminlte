@@ -29,5 +29,8 @@ export default {
   },{
     path: 'AdminLte/ComboBox',
     component: require('../views/adminlte-vue/ComboBox.vue')
+  },{
+    path: 'AdminLte/Nav',
+    component: require('../views/adminlte-vue/Nav.vue')
   }]
 }

@@ -266,6 +266,7 @@ import LteImgBtn from '../../components/adminlte-vue/ImageButton.vue'
 import LteIconBtn from '../../components/adminlte-vue/IconButton.vue'
 import LteDivider from '../../components/adminlte-vue/Divider.vue'
 import LteDropBtn from '../../components/adminlte-vue/DropdownButton.vue'
+import LteMenu from '../../components/adminlte-vue/Menu.vue'
 
 export default {
     data() {
@@ -317,7 +318,8 @@ export default {
         LteIconBtn,
         LteButtonItem,
         LteDivider,
-        LteDropBtn
+        LteDropBtn,
+        LteMenu
     }
 }
 </script>

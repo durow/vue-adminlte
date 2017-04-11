@@ -6,6 +6,11 @@
 
 <script>
 export default {
+  computed:{
+    colClass(){
+      
+    }
+  },
   props: {
     size: {
       type: String,
