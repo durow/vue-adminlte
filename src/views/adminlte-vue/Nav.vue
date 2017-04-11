@@ -10,7 +10,6 @@
                 <lte-brand icon="fa fa-bank"><b>Navbar</b></lte-brand>
                 <lte-nav-toggle target="#my-collapse"></lte-nav-toggle>
               </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
               <lte-nav-collapse id="my-collapse">
                 <lte-navbar>
                   <lte-router>Home</lte-router>
@@ -29,7 +28,8 @@
                   <lte-nav-search placeholder="搜索"></lte-nav-search>
                 </lte-nav-form>
                 <lte-navbar right>
-                  <lte-btn-item @click="fluid=!fluid" icon="fa fa-arrows-alt"></lte-btn-item>
+                  <lte-btn-item @click="fluid=!fluid"
+                                icon="fa fa-arrows-alt"></lte-btn-item>
                   <lte-menu text="Link">
                     <lte-router>Link 1</lte-router>
                     <lte-router>Link 2</lte-router>
@@ -39,9 +39,7 @@
                   <lte-router>User</lte-router>
                 </lte-navbar>
               </lte-nav-collapse>
-              <!-- /.navbar-collapse -->
             </lte-container>
-            <!-- /.container-fluid -->
           </lte-nav>
         </lte-header>
       </div>
