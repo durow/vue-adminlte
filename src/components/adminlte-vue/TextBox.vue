@@ -1,25 +1,27 @@
 <template>
-  <div class="form-horizontal">
-    <div class="form-group"
-         :class="validationStatus">
+  <div>
+    <div class="input-group"
+         :class="[textWidthClass,validationStatus]">
       <label v-if="label"
              for="mytextboxv"
              class="control-label"
              :class="labelWidthClass">{{label}}</label>
-      <div :class="textWidthClass">
-        <input type="text"
-               v-model="nowText"
-               :disabled="disabled"
-               class="form-control"
-               id="mytextboxh"
-               :placeholder="placeholder"
-               @change="onChange($event.target.value)"
-               @input="onInput($event.target.value)"
-               @focus="$emit('focus')"
-               @blur="emit('blur')">
-        <span v-show="showError"
-              class="help-block">{{errorText}}</span>
-      </div>
+      <span v-if="showAddon"
+            class="input-group-addon"><i v-if="addonIcon" :class="addonIcon"></i>{{addonText}}</span>
+      <input type="text"
+             v-model="nowText"
+             :disabled="disabled"
+             class="form-control"
+             id="mytextboxh"
+             :placeholder="placeholder"
+             @change="onChange($event.target.value)"
+             @input="onInput($event.target.value)"
+             @focus="$emit('focus')"
+             @blur="emit('blur')">
+    </div>
+    <div :class="validationStatus">
+      <span v-show="showError"
+            class="help-block">{{errorText}}</span>
     </div>
   </div>
 </template>
@@ -47,6 +49,9 @@ export default {
       return this.labelWidth ? `col-sm-${this.labelWidth}` : 'col-sm-1'
     },
     textWidthClass() {
+      if (!this.label) {
+        return ''
+      }
       if (this.textWidth) {
         return `col-sm-${this.textWidth}`
       } else if (this.labelWidth) {
@@ -57,6 +62,9 @@ export default {
     },
     showError() {
       return this.errorText && this.errorText != ''
+    },
+    showAddon() {
+      return this.addonIcon || this.addonText
     }
   },
   props: {
@@ -85,6 +93,14 @@ export default {
     },
     validation: {
       type: Function,
+      default: undefined
+    },
+    addonIcon: {
+      type: String,
+      default: undefined
+    },
+    addonText: {
+      type: String,
       default: undefined
     }
   },

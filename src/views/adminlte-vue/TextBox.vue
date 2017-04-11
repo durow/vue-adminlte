@@ -1,34 +1,44 @@
 <template>
   <div>
-    <label>input:</label>
-    <lte-textbox placeholder="input text here!"
-                 :disabled="inputDisabled"
-                 :validation='isEmpty'
-                 @change="out=$event"
-                 @input="inputing=$event"
-                 @validationChange="valResult=$event">
-    </lte-textbox>
-    <label>input:</label>
-    <div>{{inputing}}</div>
-    <br>
-    <label>change:</label>
-    <div>{{out}}</div>
-    <br>
-    <label>validationResult:</label>
-    <div>{{valResult}}</div>
-    <br>
-    <div>
-      <lte-checkbox :checked="checkTest"
-                    @change="checkChange">disabled</lte-checkbox>
-      <lte-btn @click="btnClick">{{checkTest}}</lte-btn>
+    <div class="col-md-6">
+      <lte-box header="TextBox with addon and validation"
+               variant="info">
+        <h4>input:</h4>
+        <lte-textbox placeholder="input text here!"
+                     addon-icon="fa fa-info"
+                     :disabled="inputDisabled"
+                     :validation='isEmpty'
+                     @change="out=$event"
+                     @input="inputing=$event"
+                     @validationChange="valResult=$event">
+        </lte-textbox>
+        <br>
+        <label>input:</label>
+        <div>{{inputing}}</div>
+        <br>
+        <label>change:</label>
+        <div>{{out}}</div>
+        <br>
+        <label>validationResult:</label>
+        <div>{{valResult}}</div>
+        <br>
+        <div>
+          <lte-checkbox :checked="checkTest"
+                        @change="checkChange">disabled</lte-checkbox>
+          <lte-btn variant="primary" @click="btnClick">{{checkTest}}</lte-btn>
+        </div>
+      </lte-box>
     </div>
+  
   </div>
 </template>
 
 <script>
 import LteTextbox from '../../components/adminlte-vue/TextBox.vue'
 import LteCheckbox from '../../components/adminlte-vue/CheckBox.vue'
+import LteBox from '../../components/adminlte-vue/Box.vue'
 import LteBtn from '../../components/adminlte-vue/Button.vue'
+
 
 export default {
   data() {
@@ -72,6 +82,7 @@ export default {
   components: {
     LteTextbox,
     LteCheckbox,
+    LteBox,
     LteBtn
   }
 }

@@ -36,9 +36,9 @@ export default {
   watch: {
     selection(v) {
       if (this.multiple) {
-        this.$emit('change', v, this.items.indexOf(v))
-      } else {
         this.$emit('change', v)
+      } else {
+        this.$emit('change', v, this.items.indexOf(v))
       }
     },
     selectedItem(v) {

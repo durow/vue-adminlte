@@ -1,24 +1,15 @@
 <template>
   <div class="btn-group">
-    <button type="button"
-            class="btn"
+    <button class="btn dropdown-toggle"
             :class="[variantClass,flatClass,sizeClass]"
             :disabled="disabled"
-            @click="onClick">
+            data-toggle="dropdown"
+            aria-expanded="false">
       <i v-if="icon"
          :class="icon"></i> {{text}}
-    </button>
-    <button type="button"
-            class="btn dropdown-toggle"
-            :class="[variantClass,flatClass,sizeClass]"
-            :disabled="disabled"
-            data-toggle="dropdown">
-      <span class="caret"></span>
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
+      <span class="fa fa-caret-down"></span></button>
     <ul class="dropdown-menu"
         role="menu">
-      <slot></slot>
       <template v-for="item in items">
         <LinkItem v-if="item.type=='a'"
                   :href="item.href?item.href:'#'"
@@ -81,11 +72,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    }
-  },
-  methods: {
-    onClick() {
-      this.$emit('click')
     }
   },
   components: {

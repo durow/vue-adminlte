@@ -220,6 +220,9 @@
                         <lte-router-item icon="fa fa-registered">router-item2</lte-router-item>
                         <lte-divider></lte-divider>
                     </lte-split-btn>
+                    <lte-drop-btn text="DropdownButton"
+                                  variant="warning"
+                                  :items="menu"></lte-drop-btn>
                 </lte-box>
                 <lte-box expandable
                          header="ImageButton and IconButton">
@@ -262,6 +265,7 @@ import LteButtonItem from '../../components/adminlte-vue/ButtonItem.vue'
 import LteImgBtn from '../../components/adminlte-vue/ImageButton.vue'
 import LteIconBtn from '../../components/adminlte-vue/IconButton.vue'
 import LteDivider from '../../components/adminlte-vue/Divider.vue'
+import LteDropBtn from '../../components/adminlte-vue/DropdownButton.vue'
 
 export default {
     data() {
@@ -313,6 +317,7 @@ export default {
         LteIconBtn,
         LteButtonItem,
         LteDivider,
+        LteDropBtn
     }
 }
 </script>
