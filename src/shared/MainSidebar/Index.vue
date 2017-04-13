@@ -10,10 +10,10 @@
                          @change="searchText=$event"></lte-side-search>
         <!-- 菜单面板 -->
         <lte-side-menu>
-            <lte-header-item>主要功能</lte-header-item>
+            <lte-header-item badgeText="12" icon="fa fa-tag"> 主要功能</lte-header-item>
             <lte-tree-view text="功能测试" icon="fa fa-arrows">
                 <lte-router-item to="/ModalTest"
-                                 icon="fa fa-cog">对话框</lte-router-item>
+                                 icon="fa fa-cog" badgeText="i" badgeBg="orange">对话框</lte-router-item>
                 <lte-router-item to="/LayoutTest"
                                  icon="fa fa-circle-o">布局</lte-router-item>
                 <lte-router-item to="/ElementTest"
