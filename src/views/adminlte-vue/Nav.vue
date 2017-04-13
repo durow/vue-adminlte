@@ -44,6 +44,23 @@
         </lte-header>
       </div>
     </lte-box>
+    <lte-box header="Menu">
+      <lte-navbar>
+        <lte-link>Home</lte-link>
+        <lte-menu text="Category">
+          <lte-router>Category 1</lte-router>
+          <lte-router>Category 2</lte-router>
+          <lte-divider></lte-divider>
+          <lte-router>Category 3</lte-router>
+          <lte-router>Category 4</lte-router>
+          <lte-router>Category 5</lte-router>
+        </lte-menu>
+        <lte-router>Help</lte-router>
+        <lte-router>About</lte-router>
+      </lte-navbar>
+    </lte-box>
+    <div>
+    </div>
   </div>
 </template>
 
@@ -88,7 +105,7 @@ export default {
     LteNavForm,
     LteContainer,
     LteNavSearch,
-    LteBtnItem
+    LteBtnItem,
   }
 }
 </script>

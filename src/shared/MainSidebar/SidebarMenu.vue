@@ -94,6 +94,7 @@
 </template>
 
 <script>
+
 export default {
     methods: {
         setTheme(theme) {
