@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import LteAlert from '../../components/adminlte-vue/Alert.vue'
+//import LteAlert from '../../components/adminlte-vue/Alert.vue'
 
 export default {
   data() {
@@ -46,7 +46,7 @@ export default {
     }
   },
   components: {
-    LteAlert
+    //LteAlert
   }
 }
 </script>

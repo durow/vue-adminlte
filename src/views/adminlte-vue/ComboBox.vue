@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <lte-row>
       <div class="col-md-6">
         <lte-box header="ComboBox"
                  variant="info">
@@ -28,16 +28,16 @@
           <div>you select: <b>{{selectedItems}}</b> </div>
         </lte-box>
       </div>
-    </div>
-    <lte-select></lte-select>
+    </lte-row>
+    <lte-row>
+      <lte-box header="test">
+        <lte-test>gogogo</lte-test>
+      </lte-box>
+    </lte-row>
   </div>
 </template>
 
 <script>
-import LteCombo from '../../components/adminlte-vue/ComboBox.vue'
-import LteBox from '../../components/adminlte-vue/Box.vue'
-import LteSelect from '../../components/adminlte-vue/Select.vue'
-
 export default {
   data() {
     return {
@@ -52,11 +52,6 @@ export default {
       this.selectedItem = v
       this.selectedIndex = i
     }
-  },
-  components: {
-    LteCombo,
-    LteBox,
-    LteSelect
   }
 }
 </script>

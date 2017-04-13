@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper"
        class="wrapper"
-       v-bind:class="theme">
+       :class="theme">
     <MainHeader></MainHeader>
     <MainSidebar></MainSidebar>
     <ControlSidebar></ControlSidebar>

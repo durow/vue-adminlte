@@ -8,21 +8,14 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
-// import bootstrap
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
-// import font-awesome
-import 'font-awesome/css/font-awesome.min.css'
-// import ionicons
-import 'ionicons/dist/css/ionicons.min.css'
-// import admin-lte
-import 'admin-lte/dist/css/AdminLTE.min.css'
-import 'admin-lte/dist/css/skins/_all-skins.min.css'
-import 'admin-lte/dist/js/app.min.js'
-import 'admin-lte/dist/js/demo.js'
+//import vue-adminlte
+import VueAdmin from './components/adminlte-vue/index.js'
 // import bootstrap-vue
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
+
+//add plugins
 Vue.use(BootstrapVue)
+Vue.use(VueAdmin)
 
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') {next()}

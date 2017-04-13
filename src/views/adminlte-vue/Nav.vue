@@ -8,7 +8,7 @@
             <lte-container :fluid="fluid">
               <div class="navbar-header">
                 <lte-brand icon="fa fa-bank"><b>Navbar</b></lte-brand>
-                <lte-nav-toggle target="#my-collapse"></lte-nav-toggle>
+                <lte-navbar-toggle target="#my-collapse"></lte-navbar-toggle>
               </div>
               <lte-nav-collapse id="my-collapse">
                 <lte-navbar>
