@@ -11,7 +11,7 @@
         <!-- 菜单面板 -->
         <lte-side-menu>
             <lte-header-item>主要功能</lte-header-item>
-            <lte-tree-view text="功能测试">
+            <lte-tree-view text="功能测试" icon="fa fa-arrows">
                 <lte-router-item to="/ModalTest"
                                  icon="fa fa-cog">对话框</lte-router-item>
                 <lte-router-item to="/LayoutTest"
@@ -26,7 +26,7 @@
             <lte-tree-view text="AdminLTE组件"
             icon="fa fa-bar-chart"
                            :items="adminMenu"></lte-tree-view>
-            <lte-tree-view text="主题颜色" icon="fa fa-themeisle">
+            <lte-tree-view text="主题颜色" icon="fa fa-themeisle" badgeText="new" badgeBg="red">
                     <li><a href="#"
                            v-on:click="setTheme('skin-blue')"><i class="btn btn-primary btn-xs" ></i>skin-blue</a>
                     </li>

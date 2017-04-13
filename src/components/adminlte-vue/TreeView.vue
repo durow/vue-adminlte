@@ -3,7 +3,7 @@
     <a href="#">
       <i :class="icon"></i>
       <span>{{text}}</span>
-      <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+      <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i><small v-if="badgeText" class="label" :class="[badgeBgClass]">{{badgeText}}</small></span>
     </a>
     <ul class="treeview-menu">
       <slot></slot>
@@ -30,6 +30,11 @@ import RouterItem from './RouterItem.vue'
 import Divider from './Divider.vue'
 
 export default {
+  computed: {
+    badgeBgClass() {
+      return this.badgeBg ? `bg-${this.badgeBg}` : ''
+    }
+  },
   props: {
     text: {
       type: String,
@@ -42,6 +47,14 @@ export default {
     icon: {
       type: String,
       default: undefined
+    },
+    badgeText: {
+      type: String,
+      default: undefined
+    },
+    badgeBg: {
+      type: String,
+      default: 'primary'
     }
   },
   components: {
