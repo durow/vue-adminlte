@@ -11,8 +11,8 @@
                 <li><router-link to="/ModalTest"><i class="fa fa-cog"></i>对话框</router-link></li>
                 <li><router-link to="/LayoutTest"><i class="fa fa-circle-o"></i>布局</router-link></li>
                 <li><router-link to="/ElementTest"><i class="fa fa-cubes"></i>BootstrapVue测试</router-link></li>
-                <li><router-link to="/func1_4"><i class="fa fa-bookmark-o"></i>功能项1-4</router-link></li>
-                <li><router-link to="/func1_5"><i class="fa fa-calendar-plus-o"></i>功能项1-5</router-link></li>
+                <li><router-link to="/UEditor"><i class="fa fa-bookmark-o"></i>UEditor</router-link></li>
+                <li><router-link to="/func1_5"><i class="fa fa-calendar-plus-o"></i>Fuck</router-link></li>
             </ul>
         </li>
         <li class="treeview">

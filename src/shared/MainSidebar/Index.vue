@@ -18,8 +18,8 @@
                                  icon="fa fa-circle-o">布局</lte-router-item>
                 <lte-router-item to="/ElementTest"
                                  icon="fa fa-cubes">BootstrapVue测试</lte-router-item>
-                <lte-router-item to="/func1_4"
-                                 icon="fa fa-bookmark-o">功能项1-4</lte-router-item>
+                <lte-link-item href="/UEditor"
+                                 icon="fa fa-bookmark-o">UEditor</lte-link-item>
                 <lte-router-item to="/func1_5"
                                  icon="fa fa-calendar-plus-o">功能项1-5</lte-router-item>
             </lte-tree-view>

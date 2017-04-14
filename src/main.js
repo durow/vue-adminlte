@@ -13,6 +13,11 @@ import VueAdmin from './components/adminlte-vue/index.js'
 // import bootstrap-vue
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 
+import './assets/ueditor/ueditor.config.js'
+import './assets/ueditor/ueditor.all.min.js'
+import './assets/ueditor/lang/zh-cn/zh-cn.js'
+import './assets/ueditor/ueditor.parse.min.js'
+
 //add plugins
 Vue.use(BootstrapVue)
 Vue.use(VueAdmin)
